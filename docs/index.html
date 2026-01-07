@@ -1091,6 +1091,38 @@
             gap: 12px;
             margin-bottom: 20px;
         }
+
+        /* Journal Section */
+        .journal-section {
+            margin-top: 20px;
+        }
+
+        .journal-textarea {
+            width: 100%;
+            min-height: 120px;
+            background: rgba(255, 142, 83, 0.05);
+            border: 1px solid rgba(255, 142, 83, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .journal-textarea:focus {
+            outline: none;
+            border-color: var(--sunrise-orange);
+            background: rgba(255, 142, 83, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 142, 83, 0.1);
+        }
+
+        .journal-textarea::placeholder {
+            color: var(--text-light);
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -2059,11 +2091,79 @@
         }
     }
 
+    // ========== ACTIVITY TOGGLE FUNCTIONS ==========
+    function toggleCheckbox(activityId) {
+        const checkbox = document.getElementById(activityId + 'Checkbox');
+        if (checkbox) {
+            checkbox.classList.toggle('checked');
+        }
+    }
+
+    function toggleActivity(activityId) {
+        const section = document.getElementById(activityId + 'Section');
+        if (section) {
+            section.classList.toggle('expanded');
+        }
+    }
+
+    function changePeriod(period) {
+        // Remove active class from all period buttons
+        document.querySelectorAll('.period-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Add active class to clicked button
+        event.currentTarget.classList.add('active');
+
+        // Update the display based on period
+        const completionRate = document.getElementById('completionRate');
+        const completionPeriod = document.getElementById('completionPeriod');
+        const progressCircle = document.getElementById('progressCircle');
+
+        const sportLabel = document.getElementById('sportLabel');
+        const sportValue = document.getElementById('sportValue');
+        const sportPeriod = document.getElementById('sportPeriod');
+
+        const meditationLabel = document.getElementById('meditationLabel');
+        const meditationValue = document.getElementById('meditationValue');
+        const meditationPeriod = document.getElementById('meditationPeriod');
+
+        // Update data based on period
+        if (period === 'week') {
+            completionRate.textContent = '86%';
+            completionPeriod.textContent = 'Cette semaine';
+            progressCircle.style.strokeDashoffset = '70.3';
+
+            sportValue.textContent = '30';
+            sportPeriod.textContent = 'min cette semaine';
+            meditationValue.textContent = '30';
+            meditationPeriod.textContent = 'min cette semaine';
+        } else if (period === 'month') {
+            completionRate.textContent = '100%';
+            completionPeriod.textContent = 'Ce mois';
+            progressCircle.style.strokeDashoffset = '0';
+
+            sportValue.textContent = '30';
+            sportPeriod.textContent = 'min ce mois';
+            meditationValue.textContent = '30';
+            meditationPeriod.textContent = 'min ce mois';
+        } else if (period === 'year') {
+            completionRate.textContent = '100%';
+            completionPeriod.textContent = 'Cette année';
+            progressCircle.style.strokeDashoffset = '0';
+
+            sportValue.textContent = '30';
+            sportPeriod.textContent = 'min cette année';
+            meditationValue.textContent = '30';
+            meditationPeriod.textContent = 'min cette année';
+        }
+    }
+
     // ========== ENHANCED SCREEN SWITCHING ==========
     function switchScreenEnhanced(screen) {
         // Hide all screens
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        
+
         // Show selected screen
         const screenMap = {
             'home': 'homeScreen',
@@ -2072,12 +2172,12 @@
             'history': 'historyScreen',
             'settings': 'settingsScreen'
         };
-        
+
         const screenId = screenMap[screen];
         if (screenId) {
             document.getElementById(screenId).classList.add('active');
         }
-        
+
         // Render content based on screen
         if (screen === 'dashboard') {
             updateLevelDisplay();
@@ -2087,7 +2187,7 @@
         } else if (screen === 'settings') {
             loadTheme();
         }
-        
+
         // Update nav items
         document.querySelectorAll('.nav-item').forEach(item => {
             item.classList.remove('active');
