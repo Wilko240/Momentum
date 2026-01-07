@@ -1,0 +1,368 @@
+# MORNING RITUAL - NOUVEAUX ÉCRANS HTML
+## À insérer dans morning-ritual-app-working.html
+
+---
+
+## 📋 ÉCRAN HISTORIQUE
+Insérer APRÈS la fermeture de `</div>` du `comparisonScreen` (ligne ~1400)
+
+```html
+<!-- History Screen -->
+<div class="screen" id="historyScreen">
+    <div class="header">
+        <h1 class="greeting">Historique</h1>
+        <p class="date-info">Vos routines passées</p>
+    </div>
+    
+    <div class="content">
+        <div class="history-list">
+            <!-- Rempli dynamiquement par JavaScript -->
+        </div>
+    </div>
+</div>
+```
+
+---
+
+## ⚙️ ÉCRAN PARAMÈTRES
+Insérer APRÈS la fermeture de `</div>` du `historyScreen`
+
+```html
+<!-- Settings Screen -->
+<div class="screen" id="settingsScreen">
+    <div class="header">
+        <h1 class="greeting">Paramètres</h1>
+        <p class="date-info">Personnalisez votre expérience</p>
+    </div>
+    
+    <div class="content">
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-name">Utilisateur</div>
+            <div class="profile-email">user@example.com</div>
+            <div class="profile-stats">
+                <div class="profile-stat">
+                    <div class="profile-stat-value" id="profileDays">6</div>
+                    <div class="profile-stat-label">Jours total</div>
+                </div>
+                <div class="profile-stat">
+                    <div class="profile-stat-value" id="profileLevel">Niv. 5</div>
+                    <div class="profile-stat-label">Niveau</div>
+                </div>
+                <div class="profile-stat">
+                    <div class="profile-stat-value" id="profileBadges">3</div>
+                    <div class="profile-stat-label">Badges</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Appearance -->
+        <div class="settings-section">
+            <div class="settings-title">Apparence</div>
+            <div class="settings-item" onclick="toggleTheme()">
+                <div class="settings-label">
+                    <span>🌙</span>
+                    <span>Mode sombre</span>
+                </div>
+                <div class="toggle-switch active" id="themeToggle">
+                    <div class="toggle-knob"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="settings-section">
+            <div class="settings-title">Notifications</div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>🔔</span>
+                    <span>Rappel quotidien</span>
+                </div>
+                <div class="toggle-switch active">
+                    <div class="toggle-knob"></div>
+                </div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>⏰</span>
+                    <span>Heure du rappel</span>
+                </div>
+                <div class="settings-value">7:00 AM</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>🏆</span>
+                    <span>Notifications de badges</span>
+                </div>
+                <div class="toggle-switch active">
+                    <div class="toggle-knob"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Routine -->
+        <div class="settings-section">
+            <div class="settings-title">Routine</div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>🏃</span>
+                    <span>Durée exercice</span>
+                </div>
+                <div class="settings-value">5 min</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>🧘</span>
+                    <span>Durée méditation</span>
+                </div>
+                <div class="settings-value">5 min</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>📝</span>
+                    <span>Journal obligatoire</span>
+                </div>
+                <div class="toggle-switch">
+                    <div class="toggle-knob"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Integrations -->
+        <div class="settings-section">
+            <div class="settings-title">Intégrations</div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>🌤️</span>
+                    <span>Météo</span>
+                </div>
+                <div class="settings-value">Activé</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>📅</span>
+                    <span>Calendrier</span>
+                </div>
+                <div class="settings-value">Connecter</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>❤️</span>
+                    <span>Apple Health</span>
+                </div>
+                <div class="settings-value">Connecter</div>
+            </div>
+        </div>
+        
+        <!-- About -->
+        <div class="settings-section">
+            <div class="settings-title">À propos</div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>ℹ️</span>
+                    <span>Version</span>
+                </div>
+                <div class="settings-value">1.0.0</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>📄</span>
+                    <span>Politique de confidentialité</span>
+                </div>
+                <div class="settings-value">→</div>
+            </div>
+            <div class="settings-item">
+                <div class="settings-label">
+                    <span>📧</span>
+                    <span>Support</span>
+                </div>
+                <div class="settings-value">→</div>
+            </div>
+        </div>
+        
+        <!-- Danger Zone -->
+        <div class="settings-section">
+            <div class="settings-item" style="border: 1px solid rgba(239, 68, 68, 0.3);">
+                <div class="settings-label" style="color: #EF4444;">
+                    <span>🗑️</span>
+                    <span>Réinitialiser toutes les données</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+---
+
+## 📊 SECTION BADGES DANS DASHBOARD
+Insérer APRÈS la fermeture de `</div>` du dernier `.stats-grid` dans le `dashboardScreen`
+
+```html
+<!-- Badges Section -->
+<div class="daily-card">
+    <h3 class="card-title" style="margin-bottom: 20px;">Badges & Achievements</h3>
+    <div class="badges-container">
+        <!-- Rempli dynamiquement par JavaScript -->
+    </div>
+</div>
+```
+
+---
+
+## 🎮 LEVEL CARD DANS DASHBOARD
+Insérer AU DÉBUT du `<div class="content">` dans `dashboardScreen` (avant le card "Taux de Complétion")
+
+```html
+<!-- Level Card -->
+<div class="level-card">
+    <div class="level-number" id="levelNumber">5</div>
+    <div class="level-name" id="levelName">Pratiquant Dévoué</div>
+    <div class="xp-bar">
+        <div class="xp-fill" id="xpFill" style="width: 60%;"></div>
+    </div>
+    <div class="xp-text" id="xpText">60 / 100 XP jusqu'au niveau 6</div>
+</div>
+```
+
+---
+
+## 📝 JOURNAL DANS ÉCRAN AUJOURD'HUI
+Insérer APRÈS la fermeture de `</div>` du `recommendation-section` dans `homeScreen`
+
+```html
+<!-- Journal Section -->
+<div class="journal-section">
+    <div class="activity-header" style="margin-bottom: 12px; cursor: default;">
+        <span class="activity-icon">📝</span>
+        <span class="activity-title">Journal du Jour</span>
+    </div>
+    <textarea 
+        class="journal-textarea" 
+        id="journalText"
+        placeholder="Comment vous sentez-vous aujourd'hui ? Quelles sont vos intentions pour cette journée ? (optionnel)"
+        maxlength="500"></textarea>
+    <div class="char-count" id="charCount">0 / 500</div>
+</div>
+```
+
+---
+
+## 📈 INSIGHTS ENRICHIS DANS COMPARAISON
+REMPLACER la section "Insights" existante dans `comparisonScreen` par :
+
+```html
+<!-- Insights -->
+<div class="daily-card">
+    <div class="card-header">
+        <div class="icon">📊</div>
+        <div>
+            <h2 class="card-title">Insights & Analyses</h2>
+            <p class="card-subtitle">Vos progrès détaillés</p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <div class="insight-item">
+            <span class="insight-icon">🎉</span>
+            <div class="insight-text">
+                <strong>Excellente progression !</strong> Vous avez déjà dépassé votre début 2025 (4 jours à cette période). Continuez sur cette lancée !
+            </div>
+        </div>
+        
+        <div class="insight-item">
+            <span class="insight-icon">🔥</span>
+            <div class="insight-text">
+                <strong>Série impressionnante :</strong> Votre série actuelle de 12 jours est prometteuse. Plus que 33 jours pour battre votre record de 45 jours !
+            </div>
+        </div>
+        
+        <div class="insight-item">
+            <span class="insight-icon">📈</span>
+            <div class="insight-text">
+                <strong>Amélioration constante :</strong> Votre taux de complétion moyen est de 91%, soit +16% par rapport à votre moyenne 2025 (75%).
+            </div>
+        </div>
+        
+        <div class="insight-item">
+            <span class="insight-icon">💪</span>
+            <div class="insight-text">
+                <strong>Consistance :</strong> Vous réussissez mieux les mardis et samedis. Essayez d'identifier ce qui fonctionne ces jours-là !
+            </div>
+        </div>
+        
+        <div class="insight-item">
+            <span class="insight-icon">🎯</span>
+            <div class="insight-text">
+                <strong>Objectif 2026 :</strong> À ce rythme (100%), vous atteindrez 365 routines complétées. Vous dépasserez largement votre année 2025 !
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+---
+
+## 📊 STATS ADDITIONNELLES DANS DASHBOARD
+Insérer APRÈS le premier `.stats-grid` existant dans `dashboardScreen` :
+
+```html
+<!-- Additional Stats -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-label">Taux moyen</div>
+        <div class="stat-value">91%</div>
+        <div class="stat-change positive">↑ +5% vs mois dernier</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Meilleur jour</div>
+        <div class="stat-value" style="font-size: 20px;">Mardi</div>
+        <div class="stat-change">100% de réussite</div>
+    </div>
+</div>
+```
+
+---
+
+## 🧭 NAVIGATION 5 TABS
+REMPLACER la section `.bottom-nav` existante par :
+
+```html
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+    <a class="nav-item active" onclick="switchScreen('home')">
+        <span class="nav-icon">☀️</span>
+        <span class="nav-label">Aujourd'hui</span>
+    </a>
+    <a class="nav-item" onclick="switchScreen('dashboard')">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Progrès</span>
+    </a>
+    <a class="nav-item" onclick="switchScreen('comparison')">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label">Comparaison</span>
+    </a>
+    <a class="nav-item" onclick="switchScreen('history')">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">Historique</span>
+    </a>
+    <a class="nav-item" onclick="switchScreen('settings')">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">Paramètres</span>
+    </a>
+</div>
+```
+
+---
+
+## 📋 ORDRE D'INSERTION RECOMMANDÉ
+
+1. Insérer les styles CSS (voir additional-styles.css)
+2. Ajouter Journal dans homeScreen
+3. Ajouter Level Card + Badges + Stats dans dashboardScreen
+4. Enrichir Insights dans comparisonScreen
+5. Ajouter historyScreen complet
+6. Ajouter settingsScreen complet
+7. Remplacer bottom-nav par version 5 tabs
+8. Insérer le JavaScript (voir features.js)

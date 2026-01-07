@@ -1,0 +1,343 @@
+/* ========================================
+   MORNING RITUAL - ADDITIONAL STYLES
+   Styles pour: Badges, XP, Historique, Paramètres
+   ======================================== */
+
+/* Badge System */
+.badges-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.badge-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--shadow-soft);
+    border: 1px solid rgba(255, 142, 83, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.badge-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.badge-card.locked {
+    opacity: 0.4;
+}
+
+.badge-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.badge-card:not(.locked) .badge-icon {
+    filter: grayscale(0%);
+}
+
+.badge-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.badge-desc {
+    font-size: 10px;
+    color: var(--text-light);
+}
+
+/* Level Progress */
+.level-card {
+    background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.level-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.level-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.xp-bar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.xp-fill {
+    background: white;
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}
+
+.xp-text {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* History List */
+.history-list {
+    margin-top: 20px;
+}
+
+.history-item {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px var(--shadow-soft);
+    border: 1px solid rgba(255, 142, 83, 0.1);
+    transition: all 0.3s ease;
+}
+
+.history-date {
+    text-align: center;
+    min-width: 60px;
+}
+
+.history-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--sunrise-orange);
+}
+
+.history-month {
+    font-size: 11px;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.history-details {
+    flex: 1;
+}
+
+.history-status {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.history-activities {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.history-icon {
+    font-size: 24px;
+}
+
+/* Settings */
+.settings-section {
+    margin-bottom: 24px;
+}
+
+.settings-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.settings-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 142, 83, 0.1);
+}
+
+.settings-item:hover {
+    background: rgba(255, 142, 83, 0.05);
+}
+
+.settings-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.settings-value {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    background: rgba(255, 142, 83, 0.2);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+    background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-knob {
+    transform: translateX(22px);
+}
+
+/* Profile Card */
+.profile-card {
+    background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.profile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.profile-email {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 16px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.profile-stat {
+    text-align: center;
+}
+
+.profile-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-stat-label {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Light Theme Colors (add to your :root[data-theme="light"]) */
+:root[data-theme="light"] .level-card,
+:root[data-theme="light"] .profile-card {
+    color: white; /* Keep text white on gradient backgrounds */
+}
+
+:root[data-theme="light"] .badge-card,
+:root[data-theme="light"] .history-item,
+:root[data-theme="light"] .settings-item {
+    background: #FFFFFF;
+    border: 1px solid rgba(91, 143, 163, 0.15);
+}
+
+:root[data-theme="light"] .toggle-switch {
+    background: rgba(91, 143, 163, 0.2);
+}
+
+:root[data-theme="light"] .xp-bar {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Insights */
+.insight-item {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 142, 83, 0.05);
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.insight-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.insight-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Journal Character Count */
+.char-count {
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+/* Additional Dashboard Stats */
+.stats-grid-extended {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
