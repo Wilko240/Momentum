@@ -753,6 +753,344 @@
             letter-spacing: 0.5px;
             margin-top: 4px;
         }
+        /* Badge System */
+        .badges-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .badge-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px var(--shadow-soft);
+            border: 1px solid rgba(255, 142, 83, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
+
+        .badge-card.locked {
+            opacity: 0.4;
+        }
+
+        .badge-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .badge-card:not(.locked) .badge-icon {
+            filter: grayscale(0%);
+        }
+
+        .badge-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .badge-desc {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+
+        /* Level Progress */
+        .level-card {
+            background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .level-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .level-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .xp-bar {
+            background: rgba(255, 255, 255, 0.2);
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .xp-fill {
+            background: white;
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .xp-text {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* History List */
+        .history-list {
+            margin-top: 20px;
+        }
+
+        .history-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 12px var(--shadow-soft);
+            border: 1px solid rgba(255, 142, 83, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .history-date {
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .history-day {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--sunrise-orange);
+        }
+
+        .history-month {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .history-details {
+            flex: 1;
+        }
+
+        .history-status {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .history-activities {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .history-icon {
+            font-size: 24px;
+        }
+
+        /* Settings */
+        .settings-section {
+            margin-bottom: 24px;
+        }
+
+        .settings-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .settings-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 142, 83, 0.1);
+        }
+
+        .settings-item:hover {
+            background: rgba(255, 142, 83, 0.05);
+        }
+
+        .settings-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .settings-value {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background: rgba(255, 142, 83, 0.2);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+        }
+
+        .toggle-knob {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-switch.active .toggle-knob {
+            transform: translateX(22px);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: linear-gradient(135deg, var(--sunrise-orange), var(--deep-blue));
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .profile-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .profile-email {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .profile-stat {
+            text-align: center;
+        }
+
+        .profile-stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .profile-stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Light Theme Colors (add to your :root[data-theme="light"]) */
+        :root[data-theme="light"] .level-card,
+        :root[data-theme="light"] .profile-card {
+            color: white; /* Keep text white on gradient backgrounds */
+        }
+
+        :root[data-theme="light"] .badge-card,
+        :root[data-theme="light"] .history-item,
+        :root[data-theme="light"] .settings-item {
+            background: #FFFFFF;
+            border: 1px solid rgba(91, 143, 163, 0.15);
+        }
+
+        :root[data-theme="light"] .toggle-switch {
+            background: rgba(91, 143, 163, 0.2);
+        }
+
+        :root[data-theme="light"] .xp-bar {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Insights */
+        .insight-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 142, 83, 0.05);
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .insight-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .insight-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Journal Character Count */
+        .char-count {
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* Additional Dashboard Stats */
+        .stats-grid-extended {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -862,7 +1200,21 @@
                             Avec vos 3 réunions aujourd'hui et le temps nuageux, prévoyez des pauses courtes entre chaque rendez-vous. Hydratez-vous régulièrement. Profitez de votre déjeuner pour une marche de 15 minutes - cela compensera la journée sédentaire.
                         </div>
                     </div>
-                    
+
+                    <!-- Journal Section -->
+                    <div class="journal-section">
+                        <div class="activity-header" style="margin-bottom: 12px; cursor: default;">
+                            <span class="activity-icon">📝</span>
+                            <span class="activity-title">Journal du Jour</span>
+                        </div>
+                        <textarea 
+                            class="journal-textarea" 
+                            id="journalText"
+                            placeholder="Comment vous sentez-vous aujourd'hui ? Quelles sont vos intentions pour cette journée ? (optionnel)"
+                            maxlength="500"></textarea>
+                        <div class="char-count" id="charCount">0 / 500</div>
+                    </div>
+                                        
                     <!-- Action Buttons -->
                     <div class="action-buttons">
                         <button class="btn btn-primary" onclick="completeRoutine()">✓ Routine terminée</button>
@@ -893,6 +1245,15 @@
             </div>
             
             <div class="content">
+                <!-- Level Card -->
+                <div class="level-card">
+                    <div class="level-number" id="levelNumber">5</div>
+                    <div class="level-name" id="levelName">Pratiquant Dévoué</div>
+                    <div class="xp-bar">
+                        <div class="xp-fill" id="xpFill" style="width: 60%;"></div>
+                    </div>
+                    <div class="xp-text" id="xpText">60 / 100 XP jusqu'au niveau 6</div>
+                </div>
                 <!-- Progress Ring with Period Selector -->
                 <div class="daily-card">
                     <div class="chart-period" style="justify-content: center; margin-bottom: 20px;">
@@ -980,6 +1341,30 @@
                         <div class="stat-change positive" id="meditationPeriod">min cette semaine</div>
                     </div>
                 </div>
+
+                <!-- Additional Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Taux moyen</div>
+                        <div class="stat-value">91%</div>
+                        <div class="stat-change positive">↑ +5% vs mois dernier</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Meilleur jour</div>
+                        <div class="stat-value" style="font-size: 20px;">Mardi</div>
+                        <div class="stat-change">100% de réussite</div>
+                    </div>
+                </div>
+
+                <!-- Badges Section -->
+                <div class="daily-card">
+                    <h3 class="card-title" style="margin-bottom: 20px;">Badges & Achievements</h3>
+                    <div class="badges-container">
+                        <!-- Rempli dynamiquement par JavaScript -->
+                    </div>
+                </div>
+
+
             </div>
         </div>
         
@@ -1040,23 +1425,46 @@
                     <div class="card-header">
                         <div class="icon">📊</div>
                         <div>
-                            <h2 class="card-title">Insights</h2>
-                            <p class="card-subtitle">Analyse de vos progrès</p>
+                            <h2 class="card-title">Insights & Analyses</h2>
+                            <p class="card-subtitle">Vos progrès détaillés</p>
                         </div>
                     </div>
                     
-                    <div style="margin-top: 20px; font-size: 15px; line-height: 1.8;">
-                        <p style="margin-bottom: 16px;">
-                            <strong>Excellente progression ! 🎉</strong>
-                        </p>
-                        <p style="margin-bottom: 12px; color: var(--text-light);">
-                            • Vous avez déjà dépassé votre début 2025 (4 jours à cette période)<br>
-                            • Votre série actuelle de 12 jours est très prometteuse<br>
-                            • Continuez ainsi pour battre votre record de 45 jours !
-                        </p>
-                        <p style="margin-top: 16px; padding: 16px; background: var(--background); border-radius: 12px; font-size: 14px;">
-                            <strong>Objectif 2026 :</strong> Maintenir un taux de 80%+ pour développer des habitudes durables et améliorer votre bien-être quotidien.
-                        </p>
+                    <div style="margin-top: 20px;">
+                        <div class="insight-item">
+                            <span class="insight-icon">🎉</span>
+                            <div class="insight-text">
+                                <strong>Excellente progression !</strong> Vous avez déjà dépassé votre début 2025 (4 jours à cette période). Continuez sur cette lancée !
+                            </div>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <span class="insight-icon">🔥</span>
+                            <div class="insight-text">
+                                <strong>Série impressionnante :</strong> Votre série actuelle de 12 jours est prometteuse. Plus que 33 jours pour battre votre record de 45 jours !
+                            </div>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <span class="insight-icon">📈</span>
+                            <div class="insight-text">
+                                <strong>Amélioration constante :</strong> Votre taux de complétion moyen est de 91%, soit +16% par rapport à votre moyenne 2025 (75%).
+                            </div>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <span class="insight-icon">💪</span>
+                            <div class="insight-text">
+                                <strong>Consistance :</strong> Vous réussissez mieux les mardis et samedis. Essayez d'identifier ce qui fonctionne ces jours-là !
+                            </div>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <span class="insight-icon">🎯</span>
+                            <div class="insight-text">
+                                <strong>Objectif 2026 :</strong> À ce rythme (100%), vous atteindrez 365 routines complétées. Vous dépasserez largement votre année 2025 !
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1095,7 +1503,186 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- History Screen -->
+        <div class="screen" id="historyScreen">
+            <div class="header">
+                <h1 class="greeting">Historique</h1>
+                <p class="date-info">Vos routines passées</p>
+            </div>
+            
+            <div class="content">
+                <div class="history-list">
+                    <!-- Rempli dynamiquement par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div class="screen" id="settingsScreen">
+            <div class="header">
+                <h1 class="greeting">Paramètres</h1>
+                <p class="date-info">Personnalisez votre expérience</p>
+            </div>
+            
+            <div class="content">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-name">Utilisateur</div>
+                    <div class="profile-email">user@example.com</div>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="profileDays">6</div>
+                            <div class="profile-stat-label">Jours total</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="profileLevel">Niv. 5</div>
+                            <div class="profile-stat-label">Niveau</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="profileBadges">3</div>
+                            <div class="profile-stat-label">Badges</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Appearance -->
+                <div class="settings-section">
+                    <div class="settings-title">Apparence</div>
+                    <div class="settings-item" onclick="toggleTheme()">
+                        <div class="settings-label">
+                            <span>🌙</span>
+                            <span>Mode sombre</span>
+                        </div>
+                        <div class="toggle-switch active" id="themeToggle">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="settings-section">
+                    <div class="settings-title">Notifications</div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>🔔</span>
+                            <span>Rappel quotidien</span>
+                        </div>
+                        <div class="toggle-switch active">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>⏰</span>
+                            <span>Heure du rappel</span>
+                        </div>
+                        <div class="settings-value">7:00 AM</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>🏆</span>
+                            <span>Notifications de badges</span>
+                        </div>
+                        <div class="toggle-switch active">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Routine -->
+                <div class="settings-section">
+                    <div class="settings-title">Routine</div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>🏃</span>
+                            <span>Durée exercice</span>
+                        </div>
+                        <div class="settings-value">5 min</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>🧘</span>
+                            <span>Durée méditation</span>
+                        </div>
+                        <div class="settings-value">5 min</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>📝</span>
+                            <span>Journal obligatoire</span>
+                        </div>
+                        <div class="toggle-switch">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Integrations -->
+                <div class="settings-section">
+                    <div class="settings-title">Intégrations</div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>🌤️</span>
+                            <span>Météo</span>
+                        </div>
+                        <div class="settings-value">Activé</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>📅</span>
+                            <span>Calendrier</span>
+                        </div>
+                        <div class="settings-value">Connecter</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>❤️</span>
+                            <span>Apple Health</span>
+                        </div>
+                        <div class="settings-value">Connecter</div>
+                    </div>
+                </div>
+                
+                <!-- About -->
+                <div class="settings-section">
+                    <div class="settings-title">À propos</div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>ℹ️</span>
+                            <span>Version</span>
+                        </div>
+                        <div class="settings-value">1.0.0</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>📄</span>
+                            <span>Politique de confidentialité</span>
+                        </div>
+                        <div class="settings-value">→</div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-label">
+                            <span>📧</span>
+                            <span>Support</span>
+                        </div>
+                        <div class="settings-value">→</div>
+                    </div>
+                </div>
+                
+                <!-- Danger Zone -->
+                <div class="settings-section">
+                    <div class="settings-item" style="border: 1px solid rgba(239, 68, 68, 0.3);">
+                        <div class="settings-label" style="color: #EF4444;">
+                            <span>🗑️</span>
+                            <span>Réinitialiser toutes les données</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Bottom Navigation -->
         <div class="bottom-nav">
             <a class="nav-item active" onclick="switchScreen('home')">
@@ -1110,437 +1697,432 @@
                 <span class="nav-icon">📈</span>
                 <span class="nav-label">Comparaison</span>
             </a>
+            <a class="nav-item" onclick="switchScreen('history')">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Historique</span>
+            </a>
+            <a class="nav-item" onclick="switchScreen('settings')">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">Paramètres</span>
+            </a>
         </div>
-    </div>
-    
+
     <script>
-        // Initialize app
-        function initApp() {
-            updateTime();
-            setInterval(updateTime, 1000);
-            updateGreeting();
-            
-            // Show notification after 1 second
-            setTimeout(() => {
-                document.getElementById('notification').classList.add('show');
-                setTimeout(() => {
-                    document.getElementById('notification').classList.remove('show');
-                }, 4000);
-            }, 1000);
+        /* ========================================
+    MORNING RITUAL - ADDITIONAL FEATURES
+    JavaScript pour: Badges, XP, Niveaux, Thème
+    ======================================== */
+
+    // ========== USER DATA ==========
+    let userData = {
+        xp: 60,
+        level: 5,
+        totalDays: 6,
+        currentStreak: 12,
+        badges: [
+            {id: 'fire', unlocked: true},
+            {id: 'warrior', unlocked: true},
+            {id: 'star', unlocked: true},
+            {id: 'champion', unlocked: false},
+            {id: 'diamond', unlocked: false},
+            {id: 'master', unlocked: false}
+        ],
+        history: []
+    };
+
+    // ========== BADGE SYSTEM ==========
+    const badgesData = [
+        {
+            id: 'fire',
+            name: 'Série de Feu',
+            icon: '🔥',
+            description: '7 jours consécutifs',
+            condition: (data) => data.currentStreak >= 7
+        },
+        {
+            id: 'warrior',
+            name: 'Guerrier',
+            icon: '💪',
+            description: '30 jours total',
+            condition: (data) => data.totalDays >= 30
+        },
+        {
+            id: 'star',
+            name: 'Étoile du Matin',
+            icon: '🌟',
+            description: 'Semaine parfaite',
+            condition: (data) => data.currentStreak >= 7
+        },
+        {
+            id: 'champion',
+            name: 'Champion',
+            icon: '🏆',
+            description: '100 jours total',
+            condition: (data) => data.totalDays >= 100
+        },
+        {
+            id: 'diamond',
+            name: 'Diamant',
+            icon: '💎',
+            description: '30 jours consécutifs',
+            condition: (data) => data.currentStreak >= 30
+        },
+        {
+            id: 'master',
+            name: 'Maître',
+            icon: '👑',
+            description: '365 jours total',
+            condition: (data) => data.totalDays >= 365
+        }
+    ];
+
+    // ========== LEVEL SYSTEM ==========
+    const levelNames = {
+        1: 'Débutant',
+        2: 'Apprenti',
+        3: 'Pratiquant',
+        4: 'Pratiquant Assidu',
+        5: 'Pratiquant Dévoué',
+        6: 'Expert Débutant',
+        7: 'Expert',
+        8: 'Expert Confirmé',
+        9: 'Maître Débutant',
+        10: 'Maître',
+        11: 'Maître Éclairé',
+        12: 'Sage',
+        13: 'Grand Sage',
+        14: 'Légende Vivante',
+        15: 'Légende Éternelle'
+    };
+
+    function getXPForLevel(level) {
+        // XP needed to reach next level
+        return Math.floor(50 * Math.pow(1.5, level - 1));
+    }
+
+    function getLevelFromXP(xp) {
+        let level = 1;
+        let totalXP = 0;
+        
+        while (totalXP + getXPForLevel(level) <= xp) {
+            totalXP += getXPForLevel(level);
+            level++;
         }
         
-        // Toggle activity section expand/collapse
-        function toggleActivity(type) {
-            const sections = {
-                'sport': document.getElementById('sportSection'),
-                'meditation': document.getElementById('meditationSection'),
-                'recommendation': document.getElementById('recommendationSection')
-            };
+        return {
+            level: level,
+            currentLevelXP: xp - totalXP,
+            xpForNextLevel: getXPForLevel(level)
+        };
+    }
+
+    function updateLevelDisplay() {
+        const levelInfo = getLevelFromXP(userData.xp);
+        const levelNumber = document.getElementById('levelNumber');
+        const levelName = document.getElementById('levelName');
+        const xpFill = document.getElementById('xpFill');
+        const xpText = document.getElementById('xpText');
+        
+        if (levelNumber) {
+            levelNumber.textContent = levelInfo.level;
+            levelName.textContent = levelNames[levelInfo.level] || 'Légende';
             
-            const section = sections[type];
-            if (section) {
-                section.classList.toggle('expanded');
+            const percentage = (levelInfo.currentLevelXP / levelInfo.xpForNextLevel) * 100;
+            xpFill.style.width = percentage + '%';
+            xpText.textContent = `${levelInfo.currentLevelXP} / ${levelInfo.xpForNextLevel} XP jusqu'au niveau ${levelInfo.level + 1}`;
+        }
+    }
+
+    // ========== BADGE FUNCTIONS ==========
+    function checkAndUnlockBadges() {
+        let newBadges = [];
+        
+        badgesData.forEach(badge => {
+            const userBadge = userData.badges.find(b => b.id === badge.id);
+            if (userBadge && !userBadge.unlocked && badge.condition(userData)) {
+                userBadge.unlocked = true;
+                newBadges.push(badge);
             }
-        }
+        });
         
-        // Toggle checkbox state
-        function toggleCheckbox(type) {
-            const checkboxes = {
-                'sport': document.getElementById('sportCheckbox'),
-                'meditation': document.getElementById('meditationCheckbox')
-            };
+        return newBadges;
+    }
+
+    function renderBadges() {
+        const container = document.querySelector('.badges-container');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        badgesData.forEach(badge => {
+            const userBadge = userData.badges.find(b => b.id === badge.id);
+            const isUnlocked = userBadge && userBadge.unlocked;
             
-            const checkbox = checkboxes[type];
-            if (checkbox) {
-                checkbox.classList.toggle('checked');
+            const badgeCard = document.createElement('div');
+            badgeCard.className = `badge-card ${isUnlocked ? '' : 'locked'}`;
+            badgeCard.innerHTML = `
+                <div class="badge-icon">${badge.icon}</div>
+                <div class="badge-name">${badge.name}</div>
+                <div class="badge-desc">${badge.description}</div>
+            `;
+            
+            if (isUnlocked) {
+                badgeCard.addEventListener('click', () => {
+                    alert(`🎉 ${badge.name}\n\n${badge.description}\n\nVous avez débloqué ce badge !`);
+                });
             }
+            
+            container.appendChild(badgeCard);
+        });
+    }
+
+    // ========== XP & ROUTINE COMPLETION ==========
+    function completeRoutineWithXP() {
+        const sportChecked = document.getElementById('sportCheckbox').classList.contains('checked');
+        const meditationChecked = document.getElementById('meditationCheckbox').classList.contains('checked');
+        const journalText = document.getElementById('journalText').value.trim();
+        
+        let xpGained = 0;
+        let message = '🎉 Bravo ! Routine validée pour aujourd\'hui.\n\n';
+        
+        // Calculate XP
+        if (sportChecked) {
+            xpGained += 10;
+            message += '✓ Exercice complété (+10 XP)\n';
+        } else {
+            message += '○ Exercice non fait\n';
         }
         
-        // Change dashboard period (week, month, year)
-        function changePeriod(period) {
-            // Update active button
-            document.querySelectorAll('.period-btn').forEach(btn => {
-                btn.classList.remove('active');
+        if (meditationChecked) {
+            xpGained += 10;
+            message += '✓ Méditation complétée (+10 XP)\n';
+        } else {
+            message += '○ Méditation non faite\n';
+        }
+        
+        if (journalText) {
+            xpGained += 5;
+            message += '✓ Journal écrit (+5 XP)\n';
+        }
+        
+        // Update user data
+        const previousLevel = getLevelFromXP(userData.xp).level;
+        userData.xp += xpGained;
+        userData.totalDays++;
+        userData.currentStreak++;
+        const newLevel = getLevelFromXP(userData.xp).level;
+        
+        message += `\n💫 ${xpGained} XP gagnés !\n`;
+        
+        // Check for level up
+        if (newLevel > previousLevel) {
+            message += `\n🎊 NIVEAU SUPÉRIEUR !\nVous êtes maintenant niveau ${newLevel} : ${levelNames[newLevel]}`;
+        }
+        
+        // Check for new badges
+        const newBadges = checkAndUnlockBadges();
+        if (newBadges.length > 0) {
+            message += '\n\n🏆 NOUVEAU BADGE !\n';
+            newBadges.forEach(badge => {
+                message += `${badge.icon} ${badge.name}\n`;
             });
-            event.currentTarget.classList.add('active');
-            
-            // Get all elements to update
-            const completionRate = document.getElementById('completionRate');
-            const completionPeriod = document.getElementById('completionPeriod');
-            const activityChart = document.getElementById('activityChart');
-            const progressCircle = document.getElementById('progressCircle');
-            const sportValue = document.getElementById('sportValue');
-            const sportPeriod = document.getElementById('sportPeriod');
-            const meditationValue = document.getElementById('meditationValue');
-            const meditationPeriod = document.getElementById('meditationPeriod');
-            
-            if (period === 'week') {
-                // Weekly data (6/7 days = 86%)
-                completionRate.textContent = '86%';
-                completionPeriod.textContent = 'Cette semaine';
-                progressCircle.style.strokeDashoffset = '70.3'; // 86% of 502.4
-                
-                // Sport & Meditation weekly
-                sportValue.textContent = '30';
-                sportPeriod.textContent = 'min cette semaine';
-                meditationValue.textContent = '30';
-                meditationPeriod.textContent = 'min cette semaine';
-                
-                // Weekly chart (7 days)
-                activityChart.innerHTML = `
-                    <div class="bar-container">
-                        <div class="bar" style="height: 80%;"></div>
-                        <span class="bar-label">Lun</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">Mar</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 70%;"></div>
-                        <span class="bar-label">Mer</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 90%;"></div>
-                        <span class="bar-label">Jeu</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 60%;"></div>
-                        <span class="bar-label">Ven</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 85%;"></div>
-                        <span class="bar-label">Sam</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 95%;"></div>
-                        <span class="bar-label">Dim</span>
-                    </div>
-                `;
-            } else if (period === 'month') {
-                // Monthly data (6/6 days = 100%)
-                completionRate.textContent = '100%';
-                completionPeriod.textContent = 'Ce mois';
-                progressCircle.style.strokeDashoffset = '0'; // 100%
-                
-                // Sport & Meditation monthly
-                sportValue.textContent = '30';
-                sportPeriod.textContent = 'min ce mois';
-                meditationValue.textContent = '30';
-                meditationPeriod.textContent = 'min ce mois';
-                
-                // Monthly chart (6 days so far in January)
-                activityChart.innerHTML = `
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">1</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">2</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">3</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">4</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">5</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">6</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">7</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">8</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">9</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">10</span>
-                    </div>
-                `;
-            } else if (period === 'year') {
-                // Yearly data (6/6 days = 100% so far in 2026)
-                completionRate.textContent = '100%';
-                completionPeriod.textContent = 'Cette année';
-                progressCircle.style.strokeDashoffset = '0'; // 100%
-                
-                // Sport & Meditation yearly
-                sportValue.textContent = '30';
-                sportPeriod.textContent = 'min cette année';
-                meditationValue.textContent = '30';
-                meditationPeriod.textContent = 'min cette année';
-                
-                // Yearly chart (12 months - only January has data)
-                activityChart.innerHTML = `
-                    <div class="bar-container">
-                        <div class="bar" style="height: 100%;"></div>
-                        <span class="bar-label">Jan</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Fév</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Mar</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Avr</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Mai</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Jun</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Jul</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Aoû</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Sep</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Oct</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Nov</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar" style="height: 0%; opacity: 0.3;"></div>
-                        <span class="bar-label">Déc</span>
-                    </div>
-                `;
-            }
         }
         
-        // Update current time
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
-        }
+        // Add to history
+        userData.history.unshift({
+            date: new Date(),
+            sport: sportChecked,
+            meditation: meditationChecked,
+            journal: !!journalText,
+            xp: xpGained
+        });
         
-        // Update greeting based on time
-        function updateGreeting() {
-            const hour = new Date().getHours();
-            let greeting = 'Bonjour';
-            
-            if (hour < 12) greeting = 'Bonjour';
-            else if (hour < 18) greeting = 'Petits pas, grands changements';
-            else greeting = 'Bonsoir';
-            
-            document.getElementById('greeting').textContent = greeting;
-            
-            // Update date
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const dateStr = new Date().toLocaleDateString('fr-FR', options);
-            document.getElementById('dateInfo').textContent = 
-                dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
-        }
+        alert(message);
         
-        // Switch between screens
-        function switchScreen(screen) {
-            // Hide all screens
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            
-            // Show selected screen
-            if (screen === 'home') {
-                document.getElementById('homeScreen').classList.add('active');
-            } else if (screen === 'dashboard') {
-                document.getElementById('dashboardScreen').classList.add('active');
-            } else if (screen === 'comparison') {
-                document.getElementById('comparisonScreen').classList.add('active');
-            }
-            
-            // Update nav items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-        }
+        // Update displays
+        updateLevelDisplay();
+        renderBadges();
+        saveUserData();
         
-        // Complete routine
-        function completeRoutine() {
-            const sportChecked = document.getElementById('sportCheckbox').classList.contains('checked');
-            const meditationChecked = document.getElementById('meditationCheckbox').classList.contains('checked');
-            
-            let message = '🎉 Bravo ! Routine validée pour aujourd\'hui.\n\n';
-            
-            if (sportChecked && meditationChecked) {
-                message += '✓ Exercice complété\n✓ Méditation complétée\n\n';
-                message += 'Vous avez gagné :\n• +1 jour à votre série\n• Points d\'expérience max\n• Bien-être optimal\n\nExcellent travail ! 💪';
-            } else if (sportChecked || meditationChecked) {
-                message += (sportChecked ? '✓ Exercice complété\n' : '○ Exercice non fait\n');
-                message += (meditationChecked ? '✓ Méditation complétée\n' : '○ Méditation non faite\n');
-                message += '\nVous avez gagné :\n• +1 jour à votre série\n• Points d\'expérience partiels\n\nBon début ! Continuez ainsi 👍';
+        // Visual feedback
+        const btn = event.currentTarget;
+        btn.textContent = '✓ Validé !';
+        btn.style.background = '#10B981';
+        setTimeout(() => {
+            btn.textContent = '✓ Routine terminée';
+            btn.style.background = '';
+        }, 2000);
+    }
+
+    // ========== THEME TOGGLE ==========
+    function toggleTheme() {
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = root.getAttribute('data-theme');
+        
+        if (currentTheme === 'light') {
+            root.setAttribute('data-theme', 'dark');
+            if (themeToggle) themeToggle.classList.add('active');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            root.setAttribute('data-theme', 'light');
+            if (themeToggle) themeToggle.classList.remove('active');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    function loadTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        
+        root.setAttribute('data-theme', savedTheme);
+        if (themeToggle) {
+            if (savedTheme === 'dark') {
+                themeToggle.classList.add('active');
             } else {
-                message += '○ Exercice non fait\n○ Méditation non faite\n\n';
-                message += 'Journée enregistrée.\nN\'oubliez pas que la régularité\nest la clé du succès ! 🌱';
+                themeToggle.classList.remove('active');
+            }
+        }
+    }
+
+    // ========== HISTORY RENDERING ==========
+    function renderHistory() {
+        const historyList = document.querySelector('.history-list');
+        if (!historyList) return;
+        
+        historyList.innerHTML = '';
+        
+        // Sample history data (in production, this would come from userData.history)
+        const sampleHistory = [
+            {date: new Date(2026, 0, 6), sport: true, meditation: true, journal: true},
+            {date: new Date(2026, 0, 5), sport: true, meditation: true, journal: false},
+            {date: new Date(2026, 0, 4), sport: true, meditation: true, journal: true},
+            {date: new Date(2026, 0, 3), sport: true, meditation: false, journal: false},
+            {date: new Date(2026, 0, 2), sport: true, meditation: true, journal: true},
+            {date: new Date(2026, 0, 1), sport: true, meditation: true, journal: false}
+        ];
+        
+        const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+        
+        sampleHistory.forEach(item => {
+            const day = item.date.getDate();
+            const month = months[item.date.getMonth()];
+            const isComplete = item.sport && item.meditation;
+            
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            
+            let activities = '';
+            activities += item.sport ? '✓ Exercice' : '○ Exercice';
+            activities += ' • ';
+            activities += item.meditation ? '✓ Méditation' : '○ Méditation';
+            if (item.journal) {
+                activities += ' • 📝 Journal';
             }
             
-            alert(message);
-            
-            // Visual feedback
-            const btn = event.currentTarget;
-            btn.textContent = '✓ Validé !';
-            btn.style.background = '#10B981';
-            setTimeout(() => {
-                btn.textContent = '✓ Routine terminée';
-                btn.style.background = '';
-            }, 2000);
-        }
-        
-        // Initialize on load
-        window.onload = initApp;
-        
-        // ========== PWA Features ==========
-        
-        // Register Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then((registration) => {
-                        console.log('✅ Service Worker enregistré:', registration.scope);
-                    })
-                    .catch((error) => {
-                        console.log('❌ Erreur Service Worker:', error);
-                    });
-            });
-        }
-        
-        // Install Prompt
-        let deferredPrompt;
-        const installPromptShown = localStorage.getItem('installPromptShown');
-        
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            
-            // Show install button after 3 seconds if not shown before
-            if (!installPromptShown) {
-                setTimeout(() => {
-                    showInstallPrompt();
-                }, 3000);
-            }
-        });
-        
-        function showInstallPrompt() {
-            const installBanner = document.createElement('div');
-            installBanner.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 24px;
-                right: 24px;
-                max-width: 382px;
-                margin: 0 auto;
-                background: linear-gradient(135deg, var(--sunrise-orange), var(--sky-blue));
-                padding: 20px;
-                border-radius: 20px;
-                box-shadow: 0 10px 40px var(--shadow-medium);
-                z-index: 1000;
-                animation: slideUp 0.4s ease-out;
+            historyItem.innerHTML = `
+                <div class="history-date">
+                    <div class="history-day">${day}</div>
+                    <div class="history-month">${month}</div>
+                </div>
+                <div class="history-details">
+                    <div class="history-status">${isComplete ? 'Routine complétée' : 'Routine partielle'}</div>
+                    <div class="history-activities">${activities}</div>
+                </div>
+                <span class="history-icon">${isComplete ? '✅' : '⚠️'}</span>
             `;
             
-            installBanner.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <div style="width: 40px; height: 40px; border-radius: 10px; background: white; display: flex; align-items: center; justify-content: center; font-size: 20px;">☀️</div>
-                    <div style="flex: 1;">
-                        <div style="font-weight: 600; font-size: 15px; color: white;">Installer Morning Ritual</div>
-                        <div style="font-size: 13px; color: rgba(255,255,255,0.9); margin-top: 2px;">Accès rapide à votre routine quotidienne</div>
-                    </div>
-                </div>
-                <div style="display: flex; gap: 8px; margin-top: 16px;">
-                    <button id="installBtn" style="flex: 1; padding: 12px; border-radius: 12px; border: none; background: white; color: var(--deep-blue); font-weight: 600; font-size: 14px; cursor: pointer;">Installer</button>
-                    <button id="dismissBtn" style="padding: 12px 16px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); color: white; font-weight: 600; font-size: 14px; cursor: pointer;">Plus tard</button>
-                </div>
-            `;
-            
-            document.body.appendChild(installBanner);
-            
-            document.getElementById('installBtn').addEventListener('click', async () => {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    const { outcome } = await deferredPrompt.userChoice;
-                    console.log(`Installation: ${outcome}`);
-                    deferredPrompt = null;
-                }
-                installBanner.remove();
-                localStorage.setItem('installPromptShown', 'true');
-            });
-            
-            document.getElementById('dismissBtn').addEventListener('click', () => {
-                installBanner.remove();
-                localStorage.setItem('installPromptShown', 'true');
-            });
-        }
-        
-        // Handle app install
-        window.addEventListener('appinstalled', () => {
-            console.log('✅ PWA installée avec succès !');
-            deferredPrompt = null;
+            historyList.appendChild(historyItem);
         });
+    }
+
+    // ========== CHARACTER COUNT FOR JOURNAL ==========
+    function updateCharCount() {
+        const textarea = document.getElementById('journalText');
+        const charCount = document.getElementById('charCount');
+        if (textarea && charCount) {
+            const count = textarea.value.length;
+            charCount.textContent = `${count} / 500`;
+        }
+    }
+
+    // ========== DATA PERSISTENCE ==========
+    function saveUserData() {
+        localStorage.setItem('morningRitualUserData', JSON.stringify(userData));
+    }
+
+    function loadUserData() {
+        const saved = localStorage.getItem('morningRitualUserData');
+        if (saved) {
+            userData = JSON.parse(saved);
+        }
+    }
+
+    // ========== ENHANCED SCREEN SWITCHING ==========
+    function switchScreenEnhanced(screen) {
+        // Hide all screens
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         
-        // Request notification permission
-        function requestNotificationPermission() {
-            if ('Notification' in window && Notification.permission === 'default') {
-                setTimeout(() => {
-                    if (confirm('Autoriser les notifications pour recevoir votre routine matinale quotidienne ?')) {
-                        Notification.requestPermission().then(permission => {
-                            if (permission === 'granted') {
-                                console.log('✅ Notifications autorisées');
-                                scheduleNotification();
-                            }
-                        });
-                    }
-                }, 5000);
-            }
+        // Show selected screen
+        const screenMap = {
+            'home': 'homeScreen',
+            'dashboard': 'dashboardScreen',
+            'comparison': 'comparisonScreen',
+            'history': 'historyScreen',
+            'settings': 'settingsScreen'
+        };
+        
+        const screenId = screenMap[screen];
+        if (screenId) {
+            document.getElementById(screenId).classList.add('active');
         }
         
-        // Schedule daily notification (demo)
-        function scheduleNotification() {
-            // In production, this would be handled by the backend
-            // For demo, show notification after 10 seconds
-            setTimeout(() => {
-                if (Notification.permission === 'granted') {
-                    new Notification('Morning Ritual 🌅', {
-                        body: 'Votre routine matinale est prête ! Commencez votre journée du bon pied.',
-                        icon: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23FFB89D;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%237FB3D5;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="192" height="192" rx="42" fill="url(%23grad)"/%3E%3Ctext x="96" y="130" font-size="80" text-anchor="middle" fill="white"%3E☀️%3C/text%3E%3C/svg%3E',
-                        badge: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"%3E%3Ctext x="48" y="70" font-size="60" text-anchor="middle"%3E☀️%3C/text%3E%3C/svg%3E',
-                        vibrate: [200, 100, 200],
-                        tag: 'morning-routine'
-                    });
-                }
-            }, 10000);
+        // Render content based on screen
+        if (screen === 'dashboard') {
+            updateLevelDisplay();
+            renderBadges();
+        } else if (screen === 'history') {
+            renderHistory();
+        } else if (screen === 'settings') {
+            loadTheme();
         }
         
-        // Request notification permission after user interaction
-        setTimeout(requestNotificationPermission, 2000);
+        // Update nav items
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+    }
+
+    // ========== INITIALIZATION ==========
+    function initializeNewFeatures() {
+        loadUserData();
+        loadTheme();
+        updateLevelDisplay();
+        renderBadges();
+        
+        // Setup journal character counter
+        const journalText = document.getElementById('journalText');
+        if (journalText) {
+            journalText.addEventListener('input', updateCharCount);
+        }
+        
+        // Replace original completeRoutine with XP version
+        window.completeRoutine = completeRoutineWithXP;
+        
+        // Replace original switchScreen with enhanced version
+        window.switchScreen = switchScreenEnhanced;
+        
+        console.log('✅ Morning Ritual - Nouvelles fonctionnalités chargées !');
+    }
+
+    // Auto-initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeNewFeatures);
+    } else {
+        initializeNewFeatures();
+    }
     </script>
 </body>
 </html>
